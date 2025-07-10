@@ -1,0 +1,222 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container */
+.signup-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Cards */
+.brand-card,
+.form-card {
+    flex: 1;
+    min-height: 500px;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Alignment */
+.brand-header,
+.form-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Brand Card */
+.brand-card {
+    background-color: #f4426e;
+    color: white;
+    z-index: 2;
+    position: relative;
+    right: -20px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(2.2);
+    margin: 0;
+}
+
+.logo-image {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* Form Card */
+.form-card {
+    background-color: white;
+    z-index: 1;
+}
+
+.form-card h2 {
+    font-size: 2.5rem;
+    color: #f4426e;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Form Styles */
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.input-line {
+    position: relative;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.input-line:focus-within {
+    border-bottom-color: #f4426e;
+}
+
+.input-line input {
+    width: 100%;
+    padding: 10px 30px 10px 0;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+
+.input-line input::placeholder {
+    color: #aaa;
+    font-weight: 400;
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f4426e;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 120px;
+    padding: 10px;
+    background-color: #f4426e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e03a63;
+    transform: translateY(-2px);
+}
+
+/* Form Links */
+.form-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.form-links a {
+    color: #f4426e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: #e03a63;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+    }
+    
+    .brand-card,
+    .form-card {
+        width: 100%;
+        min-height: auto;
+        right: 0;
+    }
+    
+    .brand-card {
+        border-radius: 15px 15px 0 0;
+        padding: 30px;
+    }
+    
+    .form-card {
+        border-radius: 0 0 15px 15px;
+        padding: 30px;
+    }
+    
+    .brand-title,
+    .form-card h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,658 @@
+body {
+    background: #fde5eb;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5vw 0 5vw;
+    min-height: 80vh;
+    background: #fde5eb;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    max-width: 600px;
+    flex: 1;
+}
+
+.landing-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    color: #111;
+}
+
+.landing-hero .highlight {
+    color: #f4426e;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.landing-hero h2 {
+    color: #f4426e;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0.5rem 0 1.5rem 0;
+    letter-spacing: 1px;
+}
+
+.landing-hero p {
+    color: #222;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #f4426e;
+    color: #fff;
+    padding: 18px 38px;
+    border-radius: 24px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(244,66,110,0.08);
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background: #e03a63;
+}
+
+.hero-images {
+    position: relative;
+    flex: 1;
+    min-width: 500px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Large background drop - positioned behind everything */
+.hero-drop-bg {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    width: 450px;
+    opacity: .7;
+    z-index: 1;
+}
+
+/* Main vial/hand image - centered and prominent */
+.hero-main-img {
+    position: absolute;
+    right: 130px;
+    top: 80px;
+    width: 450px;
+    max-width: 90vw;
+    z-index: 5;
+}
+
+/* Small drop icons - positioned inside the large background drop */
+.hero-drop-sm {
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    width: 350px;
+    z-index: 4;
+    opacity: 1;
+}
+
+/* Plus icons positioned near the vial */
+.hero-plus-sm {
+    position: absolute;
+    right: 550px;
+    bottom: 140px;
+    width: 80px;
+    z-index: 3;
+    opacity: 1;
+}
+
+/* Remove the large plus background */
+.hero-plus-lg {
+    position: absolute;
+    right: 580px;
+    bottom: 30px;
+    width: 150px;
+    z-index: 3;
+    opacity: 1;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 5vw;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.about-header {
+    margin-bottom: 60px;
+}
+
+.about-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.about-header h2::before,
+.about-header h2::after {
+    content: '';
+    height: 2px;
+    width: 80px;
+    background: #ddd;
+    display: inline-block;
+}
+
+.brand-name {
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 10px;
+    font-weight: 800px ;
+}
+
+.logo-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 2px solid #f4426e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Features Grid (for About Section) */
+/* Kept the original feature-card classes for the About Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.feature-card { /* This is for the About Section's feature cards */
+    background: none;
+    padding: 30px 20px; /* Matched padding */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover { /* This is for the About Section's feature cards */
+    transform: translateY(-5px);
+}
+
+.feature-icon { /* This is for the About Section's feature icons */
+    width: 100px;
+    height: 100px;
+    background: #fce4ec;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.feature-icon svg { /* This is for the About Section's feature icons */
+    color: black;
+}
+
+.feature-card h3 { /* This is for the About Section's feature titles */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-card p { /* This is for the About Section's feature descriptions */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+/* Core Features Section (UPDATED FOR UNIQUE CLASS NAMES) */
+.core-features-section {
+    padding: 80px 5vw;
+    background: #fde5eb;
+    text-align: center;
+}
+
+/* General section header styles for core features section */
+.core-features-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.core-section-header { /* Updated class name */
+    margin-bottom: 60px;
+}
+
+.core-section-title { /* Updated class name */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.core-features-section .core-text { /* No change needed, already specific */
+    color: #f4426e;
+}
+
+.core-features-section .features-text { /* No change needed, already specific */
+    color: #111;
+}
+
+.core-section-description { /* Updated class name */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Core Features Slider & Cards */
+.core-features-slider { /* Updated class name */
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.core-features-container { /* Updated class name */
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.core-feature-card { /* Updated class name */
+    background: white;
+    padding: 30px 20px; /* Adjusted padding to match About Us feature-card */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 280px;
+    max-width: 380px; /* Maintain existing max-width for consistent sizing in 3-column layout */
+    text-align: left; /* Aligned content to the left */
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.core-feature-card.active { /* Updated class name */
+    border-color: #f4426e;
+}
+
+.core-feature-card:hover { /* Updated class name */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.core-feature-icon { /* Updated class name */
+    width: 80px;
+    height: 80px;
+    background: #fce4ec;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Removed auto margins for left alignment */
+    /* If you want the icon itself to be aligned left but centered within its 80px circle, no change needed here. */
+    /* If the icon circle itself should be positioned at the far left: */
+    /* margin-left: 0; */
+    /* If you mean the icon should be aligned left within the card as a whole, this is sufficient. */
+}
+
+.core-feature-icon svg { /* Updated class name */
+    width: 48px;
+    height: 48px;
+    color: #f4426e;
+    stroke-width: 2;
+}
+
+.core-feature-title { /* Updated class name */
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    /* text-align: left is inherited from parent .core-feature-card */
+}
+
+.core-feature-description { /* Updated class name */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 0;
+    /* Removed max-width and auto margins for left alignment */
+    /* text-align: left is inherited from parent .core-feature-card */
+}
+
+/* Core Slider Indicators */
+.core-slider-indicators { /* Updated class name */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 12px;
+}
+
+.core-slider-indicators .indicator { /* Still use .indicator here as it's common */
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0;
+}
+
+.core-slider-indicators .indicator.active { /* Still use .indicator here */
+    background-color: #f4426e;
+    transform: scale(1.2);
+}
+
+.core-slider-indicators .indicator:hover:not(.active) { /* Still use .indicator here */
+    background-color: #a0a0a0;
+}
+
+
+/* Blood Type Section */
+.blood-type-section {
+    padding: 80px 5vw;
+    background: #f8f9fa;
+}
+
+.blood-type-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blood-type-info {
+    background: #fce4ec; /* Pink container */
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+/* Blood Type Grid */
+.blood-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.blood-type-badge {
+    padding: 3px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.badge-container {
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Blood Type Colors */
+.o-negative .badge-container { background: #e53e3e; }
+.o-positive .badge-container { background: #fd7f7f; }
+.a-negative .badge-container { background: #38a169; }
+.a-positive .badge-container { background: #f093fb; }
+.b-negative .badge-container { background: #805ad5; }
+.b-positive .badge-container { background: #9f7aea; }
+.ab-negative .badge-container { background: #3182ce; }
+.ab-positive .badge-container { background: #90cdf4; }
+
+/* Quick Facts Styling */
+.quick-facts-wrapper {
+    flex: 1;
+    align-self: flex-start;
+}
+
+.quick-facts {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .hero-images {
+        min-width: 400px;
+        min-height: 500px;
+    }
+    .hero-drop-bg {
+        width: 300px;
+        right: -10px;
+        top: 30px;
+    }
+    .hero-main-img {
+        width: 350px;
+        right: 30px;
+        top: 100px;
+    }
+    .hero-drop-sm {
+        width: 45px;
+        right: 60px;
+        top: 140px;
+    }
+    .hero-plus-sm {
+        width: 60px;
+        right: 20px;
+        bottom: 140px;
+    }
+    .hero-plus-lg {
+        width: 70px;
+        right: 90px;
+        bottom: 200px;
+    }
+
+    /* Core Features Responsive */
+    .core-features-container { /* Updated class name */
+        gap: 20px;
+    }
+    .core-feature-card { /* Updated class name */
+        min-width: 250px;
+        max-width: 350px;
+    }
+    .core-section-title { /* Updated class name */
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .landing-hero {
+        flex-direction: column;
+        padding: 40px 2vw 0 2vw;
+    }
+    .hero-images {
+        margin-top: 32px;
+        min-width: 0;
+        min-height: 0;
+        height: 400px;
+        width: 100%;
+    }
+    .hero-drop-bg {
+        width: 200px;
+        right: 20px;
+        top: 20px;
+    }
+    .hero-main-img {
+        width: 220px;
+        right: 40px;
+        top: 60px;
+    }
+    .hero-drop-sm {
+        width: 30px;
+        right: 40px;
+        top: 90px;
+    }
+    .hero-plus-sm {
+        width: 40px;
+        right: 15px;
+        bottom: 80px;
+    }
+    .hero-plus-lg {
+        width: 50px;
+        right: 60px;
+        bottom: 120px;
+    }
+
+    /* About Section Responsive */
+    .about-section {
+        padding: 60px 4vw;
+    }
+
+    .about-header h2 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-header h2::before,
+    .about-header h2::after {
+        width: 60px;
+    }
+
+    .features-grid { /* This is for the 'About Section' features, no change needed */
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .feature-icon { /* This is for the 'About Section' features, no change needed */
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Core Features Responsive (UPDATED CLASS NAMES) */
+    .core-features-section {
+        padding: 60px 4vw;
+    }
+    .core-section-title { /* Updated class name */
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .core-features-container { /* Updated class name */
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .core-feature-card { /* Updated class name */
+        width: 90%;
+        max-width: 400px;
+        padding: 25px;
+        text-align: left; /* Ensure left alignment on mobile too */
+    }
+    .core-feature-icon { /* Updated class name */
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px; /* Ensure vertical spacing */
+    }
+    .core-feature-icon svg { /* Updated class name */
+        width: 40px;
+        height: 40px;
+    }
+    .core-feature-title { /* Updated class name */
+        font-size: 1.15rem;
+    }
+    .core-feature-description { /* Updated class name */
+        font-size: 0.9rem;
+    }
+
+    /* Blood Type Section Responsive */
+    .blood-type-info {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .blood-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-facts {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-images {
+        height: 300px;
+    }
+    .hero-drop-bg {
+        width: 150px;
+        right: 10px;
+        top: 10px;
+    }
+    .hero-main-img {
+        width: 140px;
+        right: 30px;
+        top: 40px;
+    }
+    .hero-drop-sm {
+        width: 35px;
+        left: 5px;
+        bottom: 60px;
+    }
+    .hero-plus-sm {
+        width: 25px;
+        left: 15px;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Core Features Responsive (UPDATED CLASS NAMES) */
+    .core-features-section {
+        padding: 40px 3vw;
+    }
+    .core-section-title { /* Updated class name */
+        font-size: 1.8rem;
+    }
+    .core-feature-card { /* Updated class name */
+        padding: 20px;
+    }
+}
