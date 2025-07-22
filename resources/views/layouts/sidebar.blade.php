@@ -6,19 +6,19 @@
       <h2>BLOODKIND</h2>
     </div>
     <nav class="nav-links">
-      <a href="#">
+      <a href="{{ route('dashboard') }}">
         <i class="fa-solid fa-house"></i>
         <span>Dashboard</span>
       </a>
-      <a href="#">
+     <a href="{{ route('donor') }}">
         <i class="fa-solid fa-user icon"></i>   
         <span>Donor Registration</span>
       </a>
-      <a href="#">
+      <a href="{{ route('inventory') }}">
         <i class="fa-solid fa-droplet"></i>
         <span>Blood Inventory</span>
       </a>
-      <a href="#">
+      <a href="{{ route('matching') }}">
         <i class="fa-solid fa-hand-holding-droplet"></i>
         <span>Blood Matching</span>
       </a>
@@ -31,7 +31,7 @@
           <small>System Administrator</small>
         </div>
       </div>
-      <a href="logout.php" class="logout">
+      <a href="{{ route('landing') }}" class="logout">
         <i class="fa-solid fa-right-from-bracket"></i>
         <span>Logout</span>
       </a>

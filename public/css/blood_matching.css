@@ -1,0 +1,536 @@
+/* Page Wrapper and Container */
+.page-content-wrapper {
+    margin-left: 10px; /* Offset for sidebar */
+    margin-top: 80px; /* Offset for header */
+    padding: 30px;
+    box-sizing: border-box;
+    height: calc(100vh - 80px); /* Fill remaining vertical space */
+    overflow-y: auto; /* Enable scrolling for content */
+    background-color: #f5f7fa;
+}
+
+.blood-matching-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.matching-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-title {
+    font-size: 2.2em;
+    color: #e53e3e; /* Original color as seen in image_4c3e79.png */
+    margin: 0;
+    font-weight: 700;
+}
+
+.page-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.new-request-btn {
+    background-color: #f4426e; /* New button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-request-btn:hover {
+    background-color: #e03e62; /* Slightly darker on hover */
+    box-shadow: 0 4px 10px rgba(244, 66, 110, 0.3);
+}
+
+/* Stats Grid */
+.matching-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card.critical-case-card {
+    border-left: 5px solid #e53e3e; /* Red border for critical cases - kept original color from image */
+}
+
+.stat-content {
+    flex-grow: 1;
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1em;
+    color: #718096;
+    margin-bottom: 3px;
+}
+
+.stat-sublabel {
+    font-size: 0.85em;
+    color: #a0aec0;
+}
+
+.stat-icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    color: white;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.heart-bg {
+    background-color: #e53e3e; /* Red - kept original color from image */
+}
+.users-bg {
+    background-color: #4299e1; /* Blue - kept original color from image */
+}
+.heart-outline-bg {
+    background-color: #38a169; /* Green - kept original color from image */
+}
+.alert-bg {
+    background-color: #e53e3e; /* Red - kept original color from image */
+}
+
+/* Compatibility Finder Section */
+.compatibility-finder-section,
+.pending-requests-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px; /* Space between sections */
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.finder-controls {
+    display: flex;
+    align-items: flex-end; /* Align items at the bottom */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.finder-controls .form-group {
+    flex: 1; /* Allow form groups to grow */
+    min-width: 180px; /* Minimum width for form groups */
+    margin-bottom: 0; /* Remove default margin-bottom */
+}
+
+.finder-controls label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.finder-controls select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1em;
+}
+
+.finder-controls select:focus {
+    border-color: #f4426e; /* Using the new color for focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 66, 110, 0.2);
+}
+
+.find-donors-btn {
+    background-color: #f4426e; /* New button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    height: 48px; /* Match height of inputs with padding */
+    display: flex;
+    align-items: center;
+}
+
+.find-donors-btn:hover {
+    background-color: #e03e62; /* Slightly darker on hover */
+    box-shadow: 0 4px 10px rgba(244, 66, 110, 0.3);
+}
+
+
+/* Pending Requests Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.requests-table th,
+.requests-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.requests-table th {
+    background-color: #f0f4f8;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.requests-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+/* Urgency Status Badges */
+.requests-table .urgency-low {
+    color: #38a169; /* Green */
+    font-weight: 600;
+}
+.requests-table .urgency-medium {
+    color: #d69e2e; /* Orange */
+    font-weight: 600;
+}
+.requests-table .urgency-high {
+    color: #e53e3e; /* Red */
+    font-weight: 600;
+}
+.requests-table .urgency-critical {
+    color: #c53030; /* Darker Red */
+    font-weight: 600;
+}
+
+/* Action Buttons in Table */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.action-btn.view-btn {
+    color: #3182ce;
+}
+.action-btn.view-btn:hover {
+    background-color: #ebf8ff;
+}
+
+.action-btn.match-btn {
+    color: #38a169;
+    margin-left: 5px;
+}
+.action-btn.match-btn:hover {
+    background-color: #ebfef0;
+}
+
+
+/* --- MODAL STYLES (New Blood Request) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    display: none; /* Hidden by default */
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px; /* Max width for the modal */
+    padding: 30px;
+    position: relative;
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.modal-form .form-group {
+    margin-bottom: 20px; /* Default margin for single-column groups */
+    position: relative; /* For icon positioning */
+}
+
+.modal-form .form-group.full-width {
+    grid-column: span 2; /* Ensure these also span 2 if they are in a grid */
+}
+
+.modal-form .form-grid-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px; /* Space below the grid */
+}
+
+
+.modal-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.modal-form .form-group input[type="text"],
+.modal-form .form-group input[type="number"],
+.modal-form .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.modal-form .form-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1em;
+}
+
+.modal-form .form-group input:focus,
+.modal-form .form-group select:focus {
+    border-color: #f4426e; /* Using the new color for focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 66, 110, 0.2);
+}
+
+.modal-form .form-group.date-group input[type="text"],
+.modal-form .form-group.date-group input[type="date"] {
+    padding-right: 40px; /* Space for the icon */
+}
+
+/* Calendar icon positioning for modal date input */
+.modal-form .form-group.date-group .calendar-icon {
+    position: absolute;
+    right: 15px; /* Position from the right edge of the input */
+    top: 50%; /* Adjust to align with the center of the text input */
+    transform: translateY(2px); /* Fine-tune vertical alignment */
+    color: #888;
+    pointer-events: none; /* Allows clicks to pass through to the input */
+    font-size: 1.1em;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.modal-actions .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-actions .cancel-btn {
+    background-color: #f0f0f0;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.modal-actions .cancel-btn:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-actions .submit-request-btn { /* Specific class for this button */
+    background-color: #f4426e; /* New color as per image */
+    color: #ffffff;
+    border: none;
+}
+
+.modal-actions .submit-request-btn:hover {
+    background-color: #e03e62; /* Slightly darker on hover */
+    box-shadow: 0 4px 10px rgba(244, 66, 110, 0.3);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .blood-matching-container {
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content-wrapper {
+        margin-left: 0;
+        padding: 15px;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .blood-matching-container {
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .matching-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .new-request-btn,
+    .find-donors-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .matching-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .finder-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .finder-controls .form-group {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .requests-table th,
+    .requests-table td {
+        white-space: nowrap; /* Prevent wrapping in table cells */
+    }
+
+    /* Modal responsiveness */
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+        padding: 20px;
+    }
+    .modal-form .form-grid-two-col {
+        grid-template-columns: 1fr; /* Stack inputs vertically in modal */
+        gap: 15px;
+    }
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .blood-matching-container {
+        padding: 15px;
+    }
+}

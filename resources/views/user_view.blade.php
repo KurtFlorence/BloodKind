@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DONOR REGISTRATION</title>
 
-    {{-- Essential global styles to make fixed header/sidebar and scrolling content work --}}
-    {{-- Placed here as style.css is not global and header-home.css/sidebar.css should not be modified --}}
     <style>
         html, body {
             margin: 0;
@@ -28,8 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    @include('layouts.header-home')
-    @include('layouts.sidebar')
+    @include('layouts.user_header-home')
+    @include('layouts.user_sidebar')
 
     <div class="page-content-wrapper"> {{-- This wrapper will handle its own scrolling --}}
         <div class="donor-registration-container">

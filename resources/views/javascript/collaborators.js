@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const indicators = document.querySelectorAll('.core-slider-indicators .indicator'); // Updated from dots
-    const featureCards = document.querySelectorAll('.core-feature-card'); // Updated from cards
-    let currentIndex = 0;
+    const dots = document.querySelectorAll('.collab-dot');
+    const cards = document.querySelectorAll('.collab-card');
+    let currentSlide = 0;
 
     // Initialize the slider
     function initSlider() {
         updateSlider();
     }
 
-    // Update the active indicator and highlight the corresponding card
+    // Update the active dot and highlight the corresponding card
     function updateSlider() {
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
         });
 
         // Add highlight effect to current card (optional visual enhancement)
-        featureCards.forEach((card, index) => {
-            if (index === currentIndex) {
+        cards.forEach((card, index) => {
+            if (index === currentSlide) {
                 card.style.transform = 'translateY(-5px)';
                 card.style.boxShadow = '0 10px 30px rgba(244, 66, 110, 0.2)';
             } else {
@@ -29,19 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Go to specific slide
     function goToSlide(slideIndex) {
-        currentIndex = slideIndex;
+        currentSlide = slideIndex;
         updateSlider();
     }
 
-    // Add click event listeners to indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
+    // Add click event listeners to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
             goToSlide(index);
         });
     });
 
-    // Add hover effects to cards - moves dot based on hovered card
-    featureCards.forEach((card, index) => {
+    // Add hover effects to cards - dots move based on hovered card
+    cards.forEach((card, index) => {
         card.addEventListener('mouseenter', () => {
             goToSlide(index);
         });
@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
-            currentIndex = (currentIndex - 1 + indicators.length) % indicators.length;
+            currentSlide = (currentSlide - 1 + dots.length) % dots.length;
             updateSlider();
         } else if (e.key === 'ArrowRight') {
-            currentIndex = (currentIndex + 1) % indicators.length;
+            currentSlide = (currentSlide + 1) % dots.length;
             updateSlider();
         }
     });
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let endX = 0;
         let endY = 0;
 
-        const sliderContainer = document.querySelector('.core-features-container');
+        const sliderContainer = document.querySelector('.collab-slider');
         
         sliderContainer.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
                 if (deltaX > 0) {
                     // Swipe right - go to previous slide
-                    currentIndex = (currentIndex - 1 + indicators.length) % indicators.length;
+                    currentSlide = (currentSlide - 1 + dots.length) % dots.length;
                 } else {
                     // Swipe left - go to next slide
-                    currentIndex = (currentIndex + 1) % indicators.length;
+                    currentSlide = (currentSlide + 1) % dots.length;
                 }
                 updateSlider();
             }

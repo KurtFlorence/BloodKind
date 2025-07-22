@@ -1,0 +1,297 @@
+/* This wrapper accounts for fixed header and sidebar positioning */
+.page-content-wrapper {
+    /* These values assume your sidebar is 250px wide and your header is 80px tall.
+       Adjust if your header-home.css or sidebar.css define different fixed sizes. */
+    margin-left: 75px; /* Pushes content away from the fixed sidebar */
+    margin-top: 80px;   /* Pushes content down from the fixed header */
+    padding: 20px;      /* Padding around the donor registration form itself */
+    box-sizing: border-box;
+    height: calc(100vh - 80px); /* Fill remaining viewport height after header */
+    overflow-y: auto; /* THIS IS KEY: Enables vertical scrolling within this div */
+    background-color: #f5f7fa; /* Light background for the overall page area */
+}
+
+/* General container for the donor registration form */
+.donor-registration-container {
+    max-width: 1500px; /* wider */
+    margin: 10px auto 30px auto; /* centered horizontally */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px 60px; /* more horizontal padding for balance */
+    font-family: Arial, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Page title and description */
+.page-title {
+    font-size: 2.2em;
+    color: #e53e3e;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.page-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Form sections (Personal, Address, etc.) */
+.form-section {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #fcfcfc;
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Grid layout for form groups within sections */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+}
+
+/* For form groups that should span the full width in a 2-column grid */
+.form-grid.full-width-grid .form-group.full-width {
+    grid-column: span 2;
+}
+
+/* Individual form group styling */
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Specific styling for date inputs */
+.form-group.date-group input[type="text"] {
+    padding-right: 40px;
+}
+
+/* Custom dropdown arrow for select */
+.form-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1em;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #e53e3e;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+}
+
+/* Calendar icon positioning */
+.form-group .calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(12px);
+    color: #888;
+    pointer-events: none;
+    font-size: 1.1em;
+}
+
+/* Radio button group styling */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.radio-group label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.radio-group input[type="radio"]:checked + label::before {
+    border-color: #e53e3e;
+    background-color: #e53e3e;
+    box-shadow: inset 0 0 0 5px #fff;
+}
+
+/* Consent checkbox */
+.consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.consent-checkbox input[type="checkbox"] {
+    margin-right: 15px;
+    min-width: 18px;
+    min-height: 18px;
+    accent-color: #e53e3e;
+    cursor: pointer;
+}
+
+.consent-checkbox label {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* Form action buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-btn {
+    background-color: #e53e3e;
+    color: #ffffff;
+}
+
+.register-btn:hover {
+    background-color: #c53030;
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .donor-registration-container {
+        padding: 25px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content-wrapper {
+        /* On smaller screens, sidebar might collapse or disappear, so remove its margin */
+        margin-left: 0;
+        padding: 15px;
+        height: auto; /* Allow content to dictate height, and body will scroll if needed */
+        overflow-y: visible; /* Allow body to scroll if page-content-wrapper is full height */
+    }
+
+    .donor-registration-container {
+        padding: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-grid.full-width-grid .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .page-title {
+        font-size: 1.8em;
+    }
+
+    .page-description {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .donor-registration-container {
+        padding: 15px;
+    }
+}

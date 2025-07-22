@@ -295,23 +295,25 @@ body {
 
 .core-features-container { /* Updated class name */
     display: flex;
-    gap: 100px;
+    flex-wrap: nowrap;      /* Prevent wrapping, keep all cards in one row */
+    gap: 120px;             /* Increase gap between cards */
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .core-feature-card { /* Updated class name */
     background: white;
-    padding: 30px 20px; /* Adjusted padding to match About Us feature-card */
+    padding: 30px 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1;
-    min-width: 280px;
-    max-width: 380px; /* Maintain existing max-width for consistent sizing in 3-column layout */
-    text-align: left; /* Aligned content to the left */
+    flex: 0 0 320px;        /* Set fixed width for each card */
+    min-width: 320px;
+    max-width: 320px;
+    text-align: left;
     box-sizing: border-box;
     border: 1px solid transparent;
+    margin: 0;           /* Remove margin for even gap */
 }
 
 .core-feature-card.active { /* Updated class name */
@@ -576,6 +578,7 @@ body {
         flex-direction: column;
         gap: 5px;
     }
+
     .core-features-container { /* Updated class name */
         flex-direction: column;
         align-items: center;
@@ -654,5 +657,221 @@ body {
     }
     .core-feature-card { /* Updated class name */
         padding: 20px;
+    }
+}
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Use existing body styles from your CSS - no override needed */
+
+.collab-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.collab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.collab-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 5px;
+
+}
+
+.collab-title-our {
+    color: #f4426e;
+}
+
+.collab-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.collab-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.collab-slider-container {
+    display: flex;
+    flex-wrap: nowrap;      /* Keep all cards in a single row */
+    gap: 120px;             /* Match gap with features section */
+    justify-content: center;
+    align-items: stretch;
+}
+
+.collab-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    flex: 0 0 320px;        /* Fixed width for each card */
+    min-width: 320px;
+    max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    margin: 0;
+}
+
+.collab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.collab-card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.collab-card:nth-child(1) .collab-card-icon {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.collab-card:nth-child(2) .collab-card-icon {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.collab-card:nth-child(3) .collab-card-icon {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.collab-icon-doh {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c5530;
+}
+
+.collab-icon-redcross {
+    position: relative;
+}
+
+.collab-red-cross-symbol {
+    color: #dc3545;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.collab-icon-who {
+    position: relative;
+}
+
+.collab-who-symbol {
+    font-size: 2rem;
+}
+
+.collab-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.collab-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.collab-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.collab-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.collab-dot.active {
+    background-color: #333;
+}
+
+.collab-dot:hover {
+    background-color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collab-section {
+        padding: 60px 0;
+    }
+    
+    .collab-title {
+        font-size: 2rem;
+    }
+    
+    .collab-description {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    
+    .collab-slider-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .collab-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .collab-card-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .collab-container {
+        padding: 0 15px;
+    }
+    
+    .collab-title {
+        font-size: 1.8rem;
+    }
+    
+    .collab-card {
+        padding: 30px 20px;
+    }
+    
+    .collab-card-title {
+        font-size: 1.2rem;
+    }
+    
+    .collab-card-description {
+        font-size: 0.9rem;
     }
 }

@@ -28,7 +28,7 @@
                 At our blood bank, your compassion makes a difference. You're not just giving blood — you're giving hope, healing, and time.<br>
                 Be a hero. Donate blood. Save lives.
             </p>
-            <a href="#" class="hero-btn">Contact Us</a>
+            <a href="#footer" class="hero-btn">Contact Us</a>
         </div>
         <div class="hero-images">
             <!-- Large faded dropp.svg (background) -->
@@ -211,3 +211,66 @@
 <script>
     {!! file_get_contents(resource_path('views/javascript/core-features.js')) !!}
 </script>
+
+    <section class="collab-section" id="collaborators">
+        <div class="collab-container">
+            <h2 class="collab-title">
+                <span class="collab-title-our">Our</span> Collaborators
+            </h2>
+            <p class="collab-description">
+                We proudly work with trusted health organizations to ensure safe, reliable, and life-saving blood donation services.
+            </p>
+            
+            <div class="collab-slider">
+                <div class="collab-slider-container">
+                    <div class="collab-card">
+                        <div class="collab-card-icon">
+                            <div class="collab-icon-doh">DOH</div>
+                        </div>
+                        <h3 class="collab-card-title">Department Of Health</h3>
+                        <p class="collab-card-description">
+                            National health agency promoting health and safety nationwide
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <div class="collab-card-icon">
+                            <div class="collab-icon-redcross">
+                                <div class="collab-red-cross-symbol">✚</div>
+                            </div>
+                        </div>
+                        <h3 class="collab-card-title">Philippine Red Cross</h3>
+                        <p class="collab-card-description">
+                            National humanitarian organization providing emergency assistance and disaster relief
+                        </p>
+                    </div>
+                    
+                    <div class="collab-card">
+                        <div class="collab-card-icon">
+                            <div class="collab-icon-who">
+                                <div class="collab-who-symbol">🌍</div>
+                            </div>
+                        </div>
+                        <h3 class="collab-card-title">World Health Organization</h3>
+                        <p class="collab-card-description">
+                            Global health agency promoting health and safety worldwide
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="collab-slider-dots">
+                    <span class="collab-dot active" data-slide="0"></span>
+                    <span class="collab-dot" data-slide="1"></span>
+                    <span class="collab-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+         {!! file_get_contents(resource_path('views/javascript/collaborators.js')) !!}
+    </script>
+
+     @include('layouts.footer') 
+</body>
+</html>
